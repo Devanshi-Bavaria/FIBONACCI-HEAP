@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fibonacci Heap Visualisation</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&family=Righteous&display=swap" rel="stylesheet">
+    </head>
+
+<body>
+    <div class="main">
+        <div class="title">
+            <p>Description</p>
+        </div>
+        <div class="content">
+            <a href="index.html"><button class="btn btn-primary btn-lg">Back</button></a>
+            <br><br>    
+            <h2 class="head">What is a Fibonacci Heap?</h2>
+            <p>A fibonacci heap is a data structure that consists of a collection of trees which follow min heap or max heap property. The trees are constructed in a way such that a tree of order n has at least F<sub>n+2</sub> nodes in it, where F<sub>n+2</sub> is the (n + 2)<sup>th</sup> Fibonacci number.</p>
+
+            <img class="heap" src="fibonacci-heap.png">
+
+            <h2 class="head">Node structure</h2>
+            <img class="node" src="node.png">
+
+            <h2 class="head">Operations on a Fibonacci Heap</h2>
+            <h3>Insertion Algorithm</h3>
+            <ol>
+            <li>Create a new node for the element</li>
+            <li>Check if the heap is empty</li>
+            <li>If the heap is empty, set the new node as a root node and mark it min</li>
+            <li>Else, insert the node into the root list and update min</li>
+            </ol>
+
+            <img class="insert" src="insert-f-heap.png">
+            
+            <h3>Find Min</h3>
+            <p>The minimum element is always given by the min pointer</p>
+
+            <br>
+            <h3>Union</h3>
+            <ol>
+            <li>Concatenate the roots of both the heaps</li>
+            <li>Update min by selecting a minimum key from the new root lists</li>
+            </ol>
+            
+            <img class="union" src="union-f-heap.png">
+
+            <h3>Extract Min</h3>
+            <p>The node with minimum value is removed from the heap and the tree is re-adjusted</p>
+
+            <ol>
+            <li>Delete the min node</li>
+            <li>Set the min-pointer to the next root in the root list</li>
+            <li>Create an array of size equal to the maximum degree of the trees in the heap before deletion</li>
+            <li>Repeat until there are no multiple roots with the same degree</li>
+            <li>Map the degree of current root (min-pointer) to the degree in the array</li>
+            <li>Map the degree of next root to the degree in array</li>
+            <li>If there are more than two mappings for the same degree, then apply union operation to those roots such that the min-heap property is maintained (i.e. the minimum is at the root)</li>
+            </ol>
+
+            <table>
+                <tr>
+                    <td><img src="extract-min-1.png"></td>
+                    <td><img src="extract-min-2.png"></td>
+                    <td><img src="extract-min-3.png"></td>
+                </tr>
+                <tr>
+                    <td><img src="extract-min-4.png"></td>
+                    <td><img src="extract-min-5.png"></td>
+                    <td><img src="extract-min-6.png"></td>
+                </tr>
+                <tr>
+                    <td><img src="extract-min-7.png"></td>
+                    <!-- <td><img src="extract-min-8.png"></td> -->
+                    <td><img src="extract-min-9.png"></td>
+                    <td><img class="final" src="extract-min-10.png"></td>
+                </tr>
+            </table>
+
+            <br><br>
+        </div>
+    </div>
+</body>
+</html>
