@@ -36,4 +36,4 @@ Responsible for the interactive functionalities of the simulation, including use
 
 The Fibonacci Heap Simulator is currently deployed and accessible online:
 
-Live URL: https://devubavariaa.github.io/FIBONACCI-HEAP/
+Live URL: [https://devubavariaa.github.io/FIBONACCI-HEAP/](https://devanshi-bavaria.github.io/FIBONACCI-HEAP/)
